@@ -36,12 +36,15 @@ A continuación, se presenta el esquemático correspondiente:
    ![PCB](recursos/imgs/PCBB.jpeg){ align="center" width="95%" }
 
 
-!!! note "Importante!"
+!!! tip "Importante!"
     Entrar al panel de revision para ver que haya la menor cantidad de errores.
 
   Una vez tenemos definida la organizacion de la placa, añadimos las etiquetas y logotipos necesarios a la capa de `User.2`, el contorno a `EdgeCuts`, las pistas en `F.Cu` y los orificios donde pasaran nuestros pines los ponemos en la capa `User.1`. Todo esto busca otorgarnos mayor control sobre como se fabrica cada uno de los segmentos que conforman la PCB. Al momento de guardar las capas que ibamos a utilizar se guardo su trazo en un formato de vectores SVG.
 
   ![Esquema](recursos/imgs/Fabri.jpeg){ align=center } 
+
+!!! tip "Importante!"
+    La casilla de Fit page to board tiene que estar marcada.
 
 
 ---
@@ -49,4 +52,4 @@ A continuación, se presenta el esquemático correspondiente:
 
 ### Uso de Mods CE
 
- Esta herramienta web es la que nos ayudara a convertir los trazos SVG en codigo G que nuestra CNC pueda comprender y realizar su trabajo 
+ Esta herramienta web es la que nos ayudara a convertir los trazos SVG en codigo G que nuestra CNC pueda comprender que hacer. Para eso primero hay que acceder a la pagina de [doc-ref]:https://modsproject.org/ "Mods" para dirigirnos a  **programs --> open program --> Roland --> SRM-20mill --> mill 2D PCB.** Una vez ahí tenemos ya la interfaz en la que podremos configurar como se maquinara cada capa de nuestra PCB. Empezaremos con el trazo de las pistas. En el modulo de **read SVG** cargaremos el archivo que corresponde a las pistas. Estas habra que invertirlas en el modulo de **Convert SVG**
