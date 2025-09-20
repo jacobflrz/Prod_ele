@@ -51,7 +51,6 @@ Una vez definida la organización de la placa, añadimos las etiquetas y logotip
 
 ### Uso de Mods CE
 
-<<<<<<< HEAD
 Esta herramienta web fue la que nos ayudó a convertir los trazos SVG en código G que nuestra CNC pudo comprender. Para ello accedimos a la página de [Mods][doc-ref].
 
 Comenzamos dirigiéndonos a **programs --> open program --> Roland --> SRM-20mill --> mill 2D PCB**. Se nos despliega la interfaz en la que configuramos cómo se maquinaría cada capa de nuestra PCB. Iniciamos con el trazo de las pistas. En el módulo **read SVG** cargamos el archivo correspondiente a las pistas. Estas deben invertirse en el módulo **Convert SVG**.
@@ -117,7 +116,4 @@ Este fue el resultado final de la placa:
 
 En general, el resultado fue exitoso, ya que las pistas mantienen su tamaño en la mayoría de la placa. Solo en algunas zonas, debido a la calidad deficiente del material que utilizamos en este primer intento, nuestras pistas presentan una profundidad diferente.
 
-[doc-ref]: https://modsproject.org/
-=======
- Esta herramienta web es la que nos ayudara a convertir los trazos SVG en codigo G que nuestra CNC pueda comprender que hacer. Para eso primero hay que acceder a la pagina de [doc-ref]:https://modsproject.org/ "Mods" para dirigirnos a  **programs --> open program --> Roland --> SRM-20mill --> mill 2D PCB.** Una vez ahí tenemos ya la interfaz en la que podremos configurar como se maquinara cada capa de nuestra PCB. Empezaremos con el trazo de las pistas. En el modulo de **read SVG** cargaremos el archivo que corresponde a las pistas. Estas habra que invertirlas en el modulo de **Convert SVG**
->>>>>>> de97af36156a5cd80a220c481e774890cc459b1d
+
