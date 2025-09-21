@@ -78,6 +78,9 @@ De igual forma, se evitó el uso de esquinas de 90° en las pistas, ya que este 
 
 Adicionalmente, se buscó la organización más óptima de los componentes, priorizando la simplicidad del enrutado y la reducción del área ocupada. Con ello se logró que la placa utilizara únicamente los recursos necesarios, manteniendo un diseño limpio.
 
+!!! note "Enrutado"
+    En la seccion de edicion de placas podemos acceder al enrutado a tráves del comando `(X)` el cual nos ayudara 
+
 ![PCB](recursos/imgs/PCBB.jpeg){ align="center" width="95%" }
 
 !!! tip "Importante!"
