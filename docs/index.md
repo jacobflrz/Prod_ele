@@ -19,15 +19,62 @@ El proyecto constituyó un primer acercamiento al diseño y fabricación de PCB,
 
 ### Diseño de la PCB
 
+#### Configuración inicial en KiCad
+
+Para empezar en KiCad, realizamos la descarga de bibliotecas que contuvieran no solo los componentes, sino también las huellas de los componentes que iban a ser utilizados de manera recurrente en la clase. El menú principal de KiCad nos muestra varias opciones y herramientas que podemos utilizar.
+
+Las dos más relevantes en nuestro caso son el **editor de esquemas** y el **editor de placas**. El editor de esquemas es el que nos permite construir el esquemático de nuestro circuito; este trabaja como plano y nos muestra a qué debe estar conectada cada elemento.
+
+<figure style="text-align:center;">
+  <img src="recursos/imgs/PrinciKcad.png" alt="Menu componentes" style="width:80%;">
+  <figcaption style="font-size:0.9em; color:gray;">Página principal KiCad</figcaption>
+</figure>
+
+#### Trabajo con el editor de esquemas
+
+El editor de esquemas funciona como el plano eléctrico de nuestro circuito. Aquí definimos qué componentes necesitamos y cómo se conectan entre sí, sin preocuparnos aún por la disposición física en la placa.
+
+**Colocación de componentes:**
+Para agregar componentes al esquema, utilizamos el comando `(A)`. Esto abre una biblioteca organizada por categorías donde podemos buscar y seleccionar el componente deseado. Cada componente viene con su respectiva huella, que será crucial más adelante en el editor de placas.
+
+<figure style="text-align:center;">
+  <img src="recursos/imgs/Acomponen.png" alt="Menu componentes" style="width:80%;">
+  <figcaption style="font-size:0.9em; color:gray;">Menú de componentes (A).</figcaption>
+</figure>
+
+**Métodos de conexión:**
+Para conectar los componentes tenemos dos opciones principales:
+
+1. **Conexiones con cable `(W)`**: Se utilizan para conexiones directas y visibles entre componentes cercanos. Son ideales cuando queremos ver claramente la ruta de la conexión.
+
+2. **Etiquetas `(L)`**: Son especialmente útiles para conexiones entre puntos distantes del esquema. En lugar de dibujar cables largos que pueden ensuciar el diagrama, colocamos etiquetas con el mismo nombre en los puntos que queremos conectar. KiCad entiende automáticamente que estos puntos están conectados eléctricamente.
+
+Las etiquetas no solo simplifican visualmente el esquema, sino que también facilitan la comprensión del circuito al dar nombres descriptivos a las señales (por ejemplo: "VCC" y "GND").
+
+#### Esquemático del circuito
+
 En nuestro caso, se nos entregó un esquemático de un circuito con cuatro entradas, cada una asociada a una única salida. Dichas salidas tienen como receptor de la señal un diodo LED, el cual actúa como indicador visual del funcionamiento del circuito.
 
 A continuación, se presenta el esquemático correspondiente:
   
 ![Esquema](recursos/imgs/esquem.jpeg){ align=center } 
 
-En el diseño de la PCB fue necesario analizar las limitaciones de las herramientas disponibles; en este caso utilizamos la *Roland monoFab SRM-20*. Con base en estas limitaciones, se definió una separación mínima entre pistas de **0.4 mm**, valor que garantiza la fabricabilidad de la placa.
+#### Transición al editor de placas
+
+Para acceder al editor de placas se utiliza el icono verde en la esquina superior derecha en la barra de herramientas del editor de esquemas y una vez en el editor de placas ocupamos la misma ruta para regresar al editor de esquemas. De regreso en el editor de placas es necesario hacer una actualización de placa desde el esquema, esto nos abrirá un menú con posibles errores de nuestro esquema y nos permitirá visualizar las huellas de nuestros componentes.
+
+<figure style="text-align:center;">
+  <img src="recursos/imgs/Actual.png" alt="Menu actualizacion" style="width:70%;">
+  <figcaption style="font-size:0.9em; color:gray;">Actualización de placa desde esquema.</figcaption>
+</figure>
+
+#### Consideraciones de diseño
+
+En el diseño de la PCB fue necesario analizar las limitaciones de las herramientas disponibles; en este caso utilizamos la *Roland monoFab SRM-20*. Con base en estas limitaciones, se definió una separación mínima entre pistas de **0.4 mm**, valor que garantiza la fabricabilidad de la placa, este lo definimos en la sección de **Pista:** en la esquina superior izquierda.
 
 De igual forma, se evitó el uso de esquinas de 90° en las pistas, ya que este tipo de trazos puede generar acumulación de cargas eléctricas y dificultar el flujo de la corriente. Adoptar desde ahora estas buenas prácticas resulta importante para asegurar la escalabilidad de futuros proyectos.
+
+#### Optimización del layout
 
 Adicionalmente, se buscó la organización más óptima de los componentes, priorizando la simplicidad del enrutado y la reducción del área ocupada. Con ello se logró que la placa utilizara únicamente los recursos necesarios, manteniendo un diseño limpio.
 
@@ -36,16 +83,16 @@ Adicionalmente, se buscó la organización más óptima de los componentes, prio
 !!! tip "Importante!"
     Entrar al panel de revisión y ejecutar el DRC para verificar que haya la menor cantidad de errores.
 
-
 ![DRC](recursos/imgs/DRC.jpeg){ align="center" width="99%" }
 
-Una vez definida la organización de la placa, añadimos las etiquetas y logotipos necesarios a la capa `User.2`, el contorno a `EdgeCuts`, las pistas en `F.Cu` y los orificios donde pasarán nuestros pines los colocamos en la capa `User.1`. Todo esto busca otorgarnos mayor control sobre cómo se fabrica cada uno de los segmentos que conforman la PCB. Al momento de guardar las capas que íbamos a utilizar, se guardó su trazo en formato de vectores SVG.
+#### Preparación para fabricación
 
-<<<<<<< HEAD
+Una vez definida la organización de la placa nos dirigimos hacia el menu de **Archivo** donde habra que seleccionar la **Salidas de fabricacion** --> `gerber(.gbr)`, añadimos las etiquetas y logotipos necesarios a la capa `User.2`, el contorno a `EdgeCuts`, las pistas en `F.Cu` y los orificios donde pasarán nuestros pines los colocamos en la capa `User.1`. Todo esto busca otorgarnos mayor control sobre cómo se fabrica cada uno de los segmentos que conforman la PCB. Al momento de guardar las capas que íbamos a utilizar, se guardó su trazo en formato de vectores SVG.
+
 ![Esquema](recursos/imgs/Fabri.jpeg){ align=center } 
 
 !!! tip "Importante!"
-    Entrar al panel de revisión y ejecutar el DRC para verificar que haya la menor cantidad de errores.
+    La casilla de Fit page to board tiene que estar marcada y el formato de trazado debe estar en SVG.
 
 ---
 
@@ -95,6 +142,10 @@ Este panel nos permite mover la máquina sobre sus 3 ejes y activar el movimient
 
 Para instalar el herramental, es necesario aflojar parcialmente el tornillo prisionero que sostendrá la herramienta una vez insertada. Es importante apretarlo lo suficiente para mantener la herramienta firmemente en su lugar, pero sin excederse.
 
+<figure style="text-align:center;">
+  <img src="recursos/imgs/prisionero.jpeg" alt="Menu componentes" style="width:50%;">
+</figure>
+
 En la esquina inferior izquierda del VPanel se encuentra la sección **Spindle**, que nos permite monitorear la velocidad de rotación de nuestra herramienta y controlar el encendido o apagado del motor que la acciona.
 
 Para realizar el corte, cargamos el archivo `.rml` generado por mods en la sección **Cut**, posteriormente seleccionamos `output` y comenzamos con el proceso de corte de nuestra placa.
@@ -105,15 +156,19 @@ Para realizar el corte, cargamos el archivo `.rml` generado por mods en la secci
 
 A continuación se observa el proceso de maquinado de nuestra placa:
 
-<video width="640" height="360" controls autoplay muted loop>
-  <source src="recursos/Videos/cncc.mp4" type="video/mp4">
-  Tu navegador no soporta la reproducción de video.
+<video width="640" height="360" controls muted>
+  <source src="https://github.com/jacobflrz/Prod_ele/releases/download/v1.0/cncc.mp4" type="video/mp4">
+  Tu navegador no soporta el video.
 </video>
+
 
 Este fue el resultado final de la placa:
 
 ![VP](recursos/imgs/pcbbb.jpeg){ align="center" width="75%" }
 
 En general, el resultado fue exitoso, ya que las pistas mantienen su tamaño en la mayoría de la placa. Solo en algunas zonas, debido a la calidad deficiente del material que utilizamos en este primer intento, nuestras pistas presentan una profundidad diferente.
+
+[doc-ref]: https://modsproject.org/ "Mods"
+
 
 
