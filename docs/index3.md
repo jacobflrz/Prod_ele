@@ -18,9 +18,40 @@ Esta práctica documenta el proceso de ensamblaje manual de una placa de circuit
 
 ---
 
+### Soldadura con Pasta para Soldar
+
+Para los componentes SMD más pequeños, se utilizó el método de pasta para soldar, que ofrece mejor control y permite soldaduras más consistentes en espacios reducidos.
+
+#### Aplicación de la Pasta
+
+Se aplicó la pasta para soldar directamente sobre los pads de cobre utilizando una aguja de precisión o dispensador. La cantidad aplicada fue mínima, aproximadamente del tamaño de una lenteja, para evitar puentes de soldadura entre pads adyacentes.
+
+!!! tip "Espesor de la Pasta"
+    La pasta debe formar una capa uniforme sobre el pad. Si es demasiada, causa cortocircuitos; si es muy poca, no hay suficiente material para crear una unión robusta.
+
+#### Posicionamiento del Componente
+
+Con la pasta aplicada, se colocó el componente sobre el pad utilizando pinzas. La pasta actuó como adhesivo temporal, manteniendo el componente en su lugar.
+
+#### Calentamiento Controlado
+
+Se aplicó calor con el cautín directamente sobre el componente, permitiendo que la pasta se funda y establezca la conexión. Se utilizó movimiento circular leve del cautín para distribuir el calor uniformemente.
+
+!!! note "Punto de Fusión de la Pasta"
+    La pasta para soldar tiene un punto de fusión entre 217°C y 260°C. El cautín a 340°C funde la pasta rápidamente, típicamente en 3 a 5 segundos.
+
+#### Limpieza Posterior
+
+Una vez que la soldadura se solidificó, se retiró el cautín y se permitió que enfriara naturalmente. Finalmente, se limpió cualquier residuo de flux con alcohol isopropílico.
+
+!!! warning "Ventajas y Limitaciones"
+    La pasta para soldar es excelente para componentes pequeños y espaciados muy cerca, pero requiere mayor precisión en la aplicación. No es recomendable para soldaduras en cables o pines de inserción grandes.
+
+---
+
 ### Herramientas y Preparación del Área
 
-El éxito de la soldadura depende de la calidad de las herramientas y de un área de trabajo preparada.
+El éxito de la soldadura depende de la calidad de las herramientas y de un área de trabajo preparada adecuadamente.
 
 !!! note "Control de Temperatura"
     Se ajustó el cautín a una temperatura de aproximadamente 340°C. Esta temperatura es un punto óptimo para transferir calor eficientemente a los pads en una placa de FR-4 sin arriesgar dañar los componentes por sobrecalentamiento.
@@ -49,6 +80,37 @@ Con el componente ya inmovilizado, se soldó el terminal restante. Finalmente, s
   <img src="recursos/imgs/smd_soldering.png" alt="Soldadura SMD" style="width:80%;">
   <figcaption style="font-size:0.9em; color:gray;">Primer plano de un componente SMD siendo soldado sobre la PCB.</figcaption>
 </figure>
+
+---
+
+### Soldadura con Pasta para Soldar
+
+Para los componentes SMD más pequeños, se utilizó el método de pasta para soldar, que ofrece mejor control y permite soldaduras más consistentes en espacios reducidos.
+
+#### Aplicación de la Pasta
+
+Se aplicó la pasta para soldar directamente sobre los pads de cobre utilizando una aguja de precisión o dispensador. La cantidad aplicada fue mínima, aproximadamente del tamaño de una lenteja, para evitar puentes de soldadura entre pads adyacentes.
+
+!!! tip "Espesor de la Pasta"
+    La pasta debe formar una capa uniforme sobre el pad. Si es demasiada, causa cortocircuitos; si es muy poca, no hay suficiente material para crear una unión robusta.
+
+#### Posicionamiento del Componente
+
+Con la pasta aplicada, se colocó el componente sobre el pad utilizando pinzas. La pasta actuó como adhesivo temporal, manteniendo el componente en su lugar.
+
+#### Calentamiento Controlado
+
+Se aplicó calor con el cautín directamente sobre el componente, permitiendo que la pasta se funda y establezca la conexión. Se utilizó movimiento circular leve del cautín para distribuir el calor uniformemente.
+
+!!! note "Punto de Fusión de la Pasta"
+    La pasta para soldar tiene un punto de fusión entre 217°C y 260°C. El cautín a 340°C funde la pasta rápidamente, típicamente en 3 a 5 segundos.
+
+#### Limpieza Posterior
+
+Una vez que la soldadura se solidificó, se retiró el cautín y se permitió que enfriara naturalmente. Finalmente, se limpió cualquier residuo de flux con alcohol isopropílico.
+
+!!! warning "Ventajas y Limitaciones"
+    La pasta para soldar es excelente para componentes pequeños y espaciados muy cerca, pero requiere mayor precisión en la aplicación. No es recomendable para soldaduras en cables o pines de inserción grandes.
 
 ---
 
@@ -82,4 +144,3 @@ La inspección visual confirmó que todas las uniones eran brillantes y no prese
   <img src="recursos/imgs/pcb_final.png" alt="Placa Ensamblada" style="width:75%;">
   <figcaption style="font-size:0.9em; color:gray;">Vista de la placa estándar completamente ensamblada.</figcaption>
 </figure>
-
