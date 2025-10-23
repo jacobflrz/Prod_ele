@@ -37,17 +37,24 @@ En el menú de `Salidas de fabricación`, se activó la opción de trazado en ne
 </figure>
 
 ---
+### Botones Principales de la Brother Scan N Cut SDX225
 
-### Preparación del Tapete y Material
-
-La correcta fijación de la cinta de cobre es un paso iportante influyente en los parámetros de corte elegidos. Al ser una lámina metálica muy delgada y sin rigidez (similar a un tape), su comportamiento es muy diferente al del vinil convencional.
+<figure style="text-align:center;">
+  <img src="docs/recursos/imgs/Botones_brother.png" alt="Botones" style="width:80%;">
+  <figcaption style="font-size:0.9em; color:gray;">Botones Brother.</figcaption>
+</figure>
 
 **Posicionamiento correcto del tapete:** La máquina Brother Scan N Cut SDX225 requiere que el tapete adhesivo se coloque de manera específica, con la flecha del tapete señalando hacia adentro de la máquina.
 
 <figure style="text-align:center;">
-  <img src="recursos/imgs/kicad_negativo.png" alt="Exportación en Negativo" style="width:80%;">
-  <figcaption style="font-size:0.9em; color:gray;">Previsualización de la exportación en negativo en KiCad.</figcaption>
+  <img src="docs/recursos/imgs/Tapete_Brother.png" alt="Botones" style="width:80%;">
+  <figcaption style="font-size:0.9em; color:gray;">Tapete Brother.</figcaption>
 </figure>
+
+### Preparación del Tapete y Material
+
+La correcta fijación de la cinta de cobre es un paso importante influyente en los parámetros de corte elegidos. Al ser una lámina metálica muy delgada y sin rigidez (similar a un tape), su comportamiento es muy diferente al del vinil convencional.
+
 
 **Adhesivo de Refuerzo:** Se aplicó una capa de pegamento extra sobre la cama adhesiva para contrarrestar la tendencia del material a moverse o arrugarse. Sobre esta se colocó una cama de sacrificio de vinil como protección, y finalmente la cinta de cobre sobre esta capa.
 
@@ -67,6 +74,11 @@ Esta fase fue la más experimental. Se preparó el archivo en formato SVG (compa
 
 **Carga de archivos:** Se insertó la USB en el puerto ubicado en el costado derecho de la máquina. Con la máquina encendida y en la pantalla `Home`, se seleccionó la opción `Retrieve Data` y luego `Buscar dentro de USB` para acceder a los archivos compatibles (PHX, PHC, FCM, PES, SVG).
 
+<figure style="text-align:center;">
+  <img src="docs/recursos/imgs/retrieve_data.png" alt="Botones" style="width:80%;">
+  <figcaption style="font-size:0.9em; color:gray;">Carga archivos.</figcaption>
+</figure>
+
 **Posicionamiento del diseño:** Una vez seleccionado el archivo, la máquina mostró una cuadrícula representando el área de corte. Se utilizó la opción `Edit` para arrastrar con el dedo el dibujo completo y posicionarlo en una zona de la cuadrícula donde se confirmaba la presencia de material.
 
 !!! tip "Mantenimiento del Tapete"
@@ -74,14 +86,25 @@ Esta fase fue la más experimental. Se preparó el archivo en formato SVG (compa
 
 #### Configuración de Parámetros
 
-La configuración utilizada se basó en experimentación y se accedió a través de la opción `cut` (corte) en el menú de configuración:
+Para la configuración utilizada existen dos configuraciones con resultados positivos, se llego a estos através de experimentación y se accedió a través de la opción `cut` (corte) en el menú de configuración:
 
 - **Cut speed:** 3
 - **Cut pressure:** -9
 - **Cut pressure manual:** -9
 - **Cut amount:** auto
 - **Half cut:** On
-- **Half cut:** -2
+- **Pressure Half cut:** -2
+ 
+ Este segundo grupo de parametros dio muy buenos resultados.
+
+- **Cut speed:** 1
+- **Cut pressure:** -9
+- **Cut pressure manual:** -1
+- **Cut amount:** auto
+- **Half cut:** On
+- **Pressure Half cut:** -1
+
+
 
 !!! warning "Limitaciones de Calibración"
     La máquina Brother Scan N Cut SDX225 solo permite valores de calibración en números enteros, con especificaciones vagas sobre las unidades y direcciones que cada parámetro representa. Esta falta de precisión hace difícil reproducir resultados consistentes entre intentos. Es necesario colocar el material sobre otro sustrato (por ejemplo, vinil) para evitar daños a la base de la máquina.

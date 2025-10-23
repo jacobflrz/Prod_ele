@@ -170,6 +170,8 @@ Este fue el resultado final de la placa:
 
 En general, el resultado fue exitoso, ya que las pistas mantienen su tamaño en la mayoría de la placa. Solo en algunas zonas, debido a la calidad deficiente del material que utilizamos en este primer intento, nuestras pistas presentan una profundidad diferente.
 
+
+
 [doc-ref]: https://modsproject.org/ "Mods"
 
 
