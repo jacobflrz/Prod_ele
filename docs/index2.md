@@ -8,7 +8,7 @@
 
 **Asignatura:** Producción Electrónica
 
-**Fecha:** 28/09/2025
+**Fecha:** 2/10/2025
 
 ---
 
@@ -29,7 +29,7 @@ A diferencia de un proceso de fresado, la cortadora de vinil sigue líneas vecto
 
 #### Creación de la Máscara de Aislamiento
 
-El procedimiento inició en el editor de placas de KiCad utilizando la herramienta **"Draw Filled Zones"** (Agregar zona rellena), accesible generalmente con la tecla `B` o desde el menú lateral.
+El procedimiento inició en el editor de placas de KiCad utilizando la herramienta **"Draw Filled Zones"** (Agregar zona rellena).
 
 **Proceso paso a paso:**
 
@@ -51,7 +51,7 @@ El procedimiento inició en el editor de placas de KiCad utilizando la herramien
 
 4. **Cerrar el polígono:** Se completó el polígono haciendo doble clic o presionando Enter, lo cual creó una zona de cobre rellena que cubre toda la superficie.
 
-5. **Rellenar la zona:** KiCad automáticamente calculó y rellenó el área, respetando las pistas existentes y creando el espacio de aislamiento alrededor de ellas.
+5. **Rellenar la zona:** KiCad automáticamente calculó y rellenó el área, respetando las pistas existentes y creando el espacio de aislamiento alrededor de ellas, si esto no llega a pasar hay que presionar la tecla `B`.
 
 !!! tip "Advertencia Normal"
     Al usar `<no net>` aparecerá una advertencia: "*<no net> will result in an isolated copper island*". Esto es normal y correcto para el propósito de crear una máscara completa de cobre.
@@ -78,7 +78,7 @@ Una vez creada la máscara de aislamiento, se procedió a exportar el diseño:
 
 El resultado fue un archivo SVG donde las áreas que anteriormente eran pistas ahora son espacios vacíos (líneas de corte), y las áreas de aislamiento son ahora superficies sólidas que la cortadora de vinil seguirá como guías de corte.
 
-
+![Botones](recursos/imgs/SVG_INVER.png){ align="center" width="80%" }
 ---
 
 ### Manual de uso Brother
@@ -159,7 +159,6 @@ Los principales fallos del proceso estuvieron directamente relacionados con la n
 
 #### Limitaciones Identificadas
 
-- **Fijación inconsistente:** A pesar del refuerzo adhesivo y la cama de sacrificio, algunas áreas tendían a levantarse durante el corte.
 - **Repetibilidad limitada:** Los resultados variaban significativamente entre intentos, sugiriendo alta sensibilidad a condiciones iniciales, problemas de calibración y problemas con el estado actual de la máquina.
 - **Desgaste de herramienta:** La navaja suponemos requiere reemplazo debido a la naturaleza abrasiva del cobre.
 - **Falta de precisión en parámetros:** La imposibilidad de ajustar valores con decimales limita el control fino necesario para este tipo de material.

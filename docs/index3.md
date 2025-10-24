@@ -24,10 +24,13 @@ Esta práctica documenta el proceso de ensamblaje manual de una placa de circuit
     Se ajustó el cautín a una temperatura de aproximadamente 340°C para la soldadura convencional. Esta temperatura es un punto óptimo para transferir calor eficientemente a los pads en una placa sin arriesgar dañar los componentes por sobrecalentamiento. Para la soldadura con pasta, se utilizó 420°C.
 
 **Herramientas utilizadas:**
+
 - **Pinzas:** Antiestáticas de punta fina y curveadas para manipulación precisa de componentes pequeños.
 - **Estaño:** Soldadura de estaño estándar para todas las uniones.
-- **Flux:** Pasta de flux para mejorar la capilaridad del estaño y asegurar uniones rápidas y limpias
+- **Flux:** Pasta de flux para mejorar la capilaridad del estaño y asegurar uniones rápidas y limpias.
 - **Superficie de Trabajo:** Se trabajó sobre una superficie plana y resistente al calor para dar soporte completo a la placa, asegurando su estabilidad durante el proceso.
+
+![Cautin](recursos/imgs/mate_sol.jpg){ align="center" width="90%" }
 
 ---
 
@@ -40,10 +43,7 @@ Para los componentes 1206, se implementó la técnica de anclaje.
 
 Primero, se aplicó una mínima cantidad de estaño a un solo pad. Sosteniendo el componente con pinzas, se recalentó ese pad para fijar un extremo del componente. Con el componente ya inmovilizado, se soldó el terminal restante. 
 
-<figure style="text-align:center;">
-  <img src="recursos/imgs/smd_soldering.png" alt="Soldadura SMD" style="width:80%;">
-  <figcaption style="font-size:0.9em; color:gray;">Primer plano de un componente SMD siendo soldado sobre la PCB.</figcaption>
-</figure>
+![SMD](recursos/imgs/smd_boto.jpg){ align="center" width="95%" }
 
 ---
 
@@ -53,8 +53,10 @@ Para los componentes SMD más pequeños, se utilizó el método de pasta para so
 
 Se aplicó la pasta para soldar directamente sobre los pads de cobre. La cantidad aplicada fue mínima, para evitar puentes de soldadura entre pads adyacentes.
 
+![Pasta](recursos/imgs/pastita.jpg){ align="center" width="90%" }
+
 !!! tip "Espesor de la Pasta"
-    La pasta debe formar una capa uniforme sobre el pad. Si es demasiada, podría causa cortocircuitos; si es muy poca, no hay suficiente material para crear una unión robusta.
+    La pasta debe formar una capa uniforme sobre el pad. Si es demasiada, podría causar cortocircuitos; si es muy poca, no hay suficiente material para crear una unión robusta.
 
 Con la pasta aplicada, se colocó el componente sobre el pad utilizando pinzas. La pasta actuó como adhesivo temporal, manteniendo el componente en su lugar. Se aplicó calor con un cautín a una temperatura aproximada de 420°C, permitiendo que la pasta se funda y establezca la conexión. Se utilizó movimiento leve y uniforme del cautín para distribuir el calor de forma controlada.
 
@@ -64,7 +66,7 @@ Con la pasta aplicada, se colocó el componente sobre el pad utilizando pinzas. 
 Una vez que la soldadura se solidificó, se retiró el cautín y se permitió que enfriara naturalmente. Finalmente, se limpió cualquier residuo de flux con alcohol isopropílico.
 
 !!! warning "Ventajas y Limitaciones"
-    La pasta para soldar es excelente para componentes pequeños y espaciados muy cerca, pero requiere mayor precisión en la aplicación. El uso de un cautín a mayor temperatura (420°C) acelera significativamente el proceso de fusión en comparación con métodos alternativos, permitiendo mayor control y precisión en espacios muy reducidos. No es recomendable para soldaduras en cables.
+    La pasta para soldar es excelente para componentes pequeños y espaciados muy cerca, pero requiere mayor precisión en la aplicación. No es recomendable para soldaduras en cables.
 
 ---
 
@@ -75,7 +77,7 @@ El principal objetivo con los pines de conexión fue asegurar su perpendicularid
 Se insertaron las tiras de pines y se soldó un único pin en cada extremo para fijar la orientación. Se procedió a soldar los pines restantes aplicando calor a la base del pin y al pad de cobre simultáneamente antes de introducir el estaño.
 
 !!! note "La Unión Perfecta en Forma de Cono"
-    Una soldadura THT correcta debe tener una forma cóncava, similar a un pequeño volcán. Esta forma indica que el estaño se ha unido correctamente tanto el pin como el pad (unión por capilaridad), garantizando una conexión eléctrica y mecánica robusta, una mala manipulacion o soldaura puede provocar por acción mecánica el quiebre de las pistas.
+    Una soldadura THT correcta debe tener una forma cóncava, similar a un pequeño volcán. Esta forma indica que el estaño se ha unido correctamente tanto al pin como al pad (unión por capilaridad), garantizando una conexión eléctrica y mecánica robusta. Una mala manipulación o soldadura puede provocar por acción mecánica el quiebre de las pistas.
 
 ---
 
@@ -84,16 +86,16 @@ Se insertaron las tiras de pines y se soldó un único pin en cada extremo para 
 Tras la soldadura, se realizó una limpieza con alcohol isopropílico.
 
 !!! tip "La Importancia de la Limpieza"
-    Remover los residuos de flux no es solo por estética. pueden crear caminos conductivos no deseados en la placa, ademas de crear un terminado estetico indeseable.
+    Remover los residuos de flux no es solo por estética. Pueden crear caminos conductivos no deseados en la placa, además de generar un terminado estético indeseable.
 
 #### Pruebas de Continuidad y Validación
 
 La inspección visual confirmó que todas las uniones eran brillantes y no presentaban signos de soldadura fría. El circuito ensamblado fue sometido a pruebas de continuidad utilizando un multímetro.
 
 **Resultados de resistencia:**
-- **Líneas de señal:** 11 kΩ (valor esperado: 1 kΩ. La discrepancia aunque considerable se determinó que no iba a repercutir en el funcionamiento de la placa)
 
-- **Positivo de LEDs:** 330 Ω (valor esperado: correcto)
+- **Líneas de señal:** 11 kΩ (valor esperado: 1 kΩ. La discrepancia aunque considerable se determinó que no iba a repercutir en el funcionamiento de la placa)
+- **Positivo de LEDs:** 330 Ω (valor correcto)
 
 **Problemas identificados y soluciones:**
 
@@ -107,7 +109,4 @@ Los botones requirieron re-soldadura después del primer intento, logrando final
 
 A pesar de las desviaciones en la resistencia de las líneas de señal (11 kΩ en lugar de 1 kΩ esperado) y los problemas identificados durante el proceso, el circuito demostró continuidad eléctrica y funcionalidad. El resultado final validó que las técnicas de soldadura empleadas, aunque requirieron correcciones, fueron suficientes para obtener un circuito operacional.
 
-<figure style="text-align:center;">
-  <img src="recursos/imgs/pcb_final.png" alt="Placa Ensamblada" style="width:75%;">
-  <figcaption style="font-size:0.9em; color:gray;">Vista de la placa estándar completamente ensamblada.</figcaption>
-</figure>
+![PCB Final](recursos/imgs/pcb_sold.JPG){ align="center" width="80%" }
