@@ -14,9 +14,9 @@
 
 ### Resumen
 
-La práctica consistió en gran parte de adaptar tecnologías de fabricación digital, específicamente una cortadora de vinil Brother, para el prototipado rápido de circuitos impresos flexibles. El objetivo fue desarrollar un flujo de trabajo completo desde la preparación de archivos en KiCad hasta la ejecución del corte sobre cinta de cobre. 
+La práctica consistió en gran parte en adaptar tecnologías de fabricación digital, específicamente una cortadora de vinil Brother, para el prototipado rápido de circuitos impresos flexibles. El objetivo fue desarrollar un flujo de trabajo completo desde la preparación de archivos en KiCad hasta la ejecución del corte sobre cinta de cobre. 
 
-Los resultados, aunque todavia no funcionales, demuestran que el proceso se encuentra en una fase temprana de caracterización. Se identificaron desafíos significativos relacionados con la naturaleza del material, el cual, al ser una cinta delgada no rígida, tiende a arrugarse y atorarse en la navaja, es probable que se deba a un fallo en el carro de la cortadora. Además, limitaciones en los parámetros de calibración de la máquina y problemas mecánicos durante el proceso requieren optimización para lograr resultados confiables.
+Los resultados, aunque todavía no funcionales, demuestran que el proceso se encuentra en una fase temprana de caracterización. Se identificaron desafíos significativos relacionados con la naturaleza del material, el cual, al ser una cinta delgada no rígida, tiende a arrugarse y atorarse en la navaja, es probable que se deba a un fallo en el carro de la cortadora. Además, limitaciones en los parámetros de calibración de la máquina y problemas mecánicos durante el proceso requieren optimización para lograr resultados confiables.
 
 ---
 
@@ -27,22 +27,65 @@ A diferencia de un proceso de fresado, la cortadora de vinil sigue líneas vecto
 !!! danger "Paso Necesario: Exportación en Negativo"
     La cortadora está diseñada para seguir líneas. Si se exporta el diseño normal, cortaría las pistas como líneas, haciendo inviable el circuito. Al exportar en negativo, las líneas que la máquina sigue son las del aislamiento entre pistas, que es precisamente el cobre que queremos remover.
 
-El procedimiento inició en KiCad con el uso de la herramienta creador de polígonos. Se dibujó un polígono que abarcaba la totalidad de la capa de cobre del diseño.
+#### Creación de la Máscara de Aislamiento
 
-En el menú de `Salidas de fabricación`, se activó la opción de trazado en negativo. El archivo se exportó en formato SVG para asegurar su compatibilidad.
+El procedimiento inició en el editor de placas de KiCad utilizando la herramienta **"Draw Filled Zones"** (Agregar zona rellena), accesible generalmente con la tecla `B` o desde el menú lateral.
 
-<figure style="text-align:center;">
-  <img src="imgs/kicad_negativo.png" alt="Exportación en Negativo" style="width:80%;">
-  <figcaption style="font-size:0.9em; color:gray;">Previsualización de la exportación en negativo en KiCad.</figcaption>
-</figure>
+**Proceso paso a paso:**
+
+1. **Activar la herramienta:** Se seleccionó "Draw Filled Zones" en el panel de herramientas del editor de placas.
+
+    ![Botones](recursos/imgs/Poligoni.png){ align="center" width="96%" }
+
+2. **Configurar la zona:** Al hacer clic en la placa, apareció un cuadro de diálogo donde se configuró:
+    - **Layer:** F.Cu (capa frontal de cobre)
+    - **Net:** `<no net>` (sin conexión a red específica)
+    - **Clearance:** 0.25 mm
+    - **Minimum width:** 0.27 mm
+    - **Pad connections:** Solid
+    - **Zone priority level:** 0
+
+![Botones](recursos/imgs/Poligoni_confg.png){ align="center" width="96%" }
+
+3. **Dibujar el polígono:** Se dibujó un rectángulo o polígono que abarcaba toda el área de la placa, cubriendo completamente todas las pistas y componentes. Esto se hizo haciendo clic en cada esquina del área deseada.
+
+4. **Cerrar el polígono:** Se completó el polígono haciendo doble clic o presionando Enter, lo cual creó una zona de cobre rellena que cubre toda la superficie.
+
+5. **Rellenar la zona:** KiCad automáticamente calculó y rellenó el área, respetando las pistas existentes y creando el espacio de aislamiento alrededor de ellas.
+
+!!! tip "Advertencia Normal"
+    Al usar `<no net>` aparecerá una advertencia: "*<no net> will result in an isolated copper island*". Esto es normal y correcto para el propósito de crear una máscara completa de cobre.
+
+![Botones](recursos/imgs/Seminver1.png){ align="center" width="96%" }    
+
+#### Exportación en Negativo
+
+Una vez creada la máscara de aislamiento, se procedió a exportar el diseño:
+
+![Inversa](recursos/imgs/Kid_Salidas2.png){ align="center" width="85%" }
+
+1. **Acceder al menú de exportación:** En el editor de placas, se navegó a `Archivo` → `Salidas de fabricación` → `Trazado`
+
+2. **Configurar la exportación:**
+   - **Formato:** SVG (Scalable Vector Graphics)
+   - **Capas:** Se seleccionó únicamente la capa de cobre con la zona rellena (F.Cu)
+   - **Opciones críticas:**
+     - ✓ **Trazado en negativo:** Esta opción invierte el diseño
+     - ✓ **Excluir valor de los pads:** Para evitar texto innecesario
+     - Modo de trazado: Líneas
+
+3. **Generar el archivo:** Se hizo clic en "Plot" para crear el archivo SVG en negativo.
+
+El resultado fue un archivo SVG donde las áreas que anteriormente eran pistas ahora son espacios vacíos (líneas de corte), y las áreas de aislamiento son ahora superficies sólidas que la cortadora de vinil seguirá como guías de corte.
+
 
 ---
+
 ### Manual de uso Brother
 
 [Revisar Manual PDF](recursos/archivos/Manual.pdf){ .md-button }
 
 ### Botones Principales de la Brother Scan N Cut SDX225
-
 
 ![Botones](recursos/imgs/Botones_brother.png){ align="center" width="96%" }
 
@@ -52,8 +95,7 @@ En el menú de `Salidas de fabricación`, se activó la opción de trazado en ne
 
 ### Preparación del Tapete y Material
 
-La correcta fijación de la cinta de cobre es un paso importante influyente en los parámetros de corte elegidos. Al ser una lámina metálica muy delgada y sin rigidez (similar a un tape), su comportamiento es muy diferente al del vinil convencional.
-
+La correcta fijación de la cinta de cobre es un paso importante e influyente en los parámetros de corte elegidos. Al ser una lámina metálica muy delgada y sin rigidez (similar a un tape), su comportamiento es muy diferente al del vinil convencional.
 
 **Adhesivo de Refuerzo:** Se aplicó una capa de pegamento extra sobre la cama adhesiva para contrarrestar la tendencia del material a moverse o arrugarse. Sobre esta se colocó una cama de sacrificio de vinil como protección, y finalmente la cinta de cobre sobre esta capa.
 
@@ -73,19 +115,18 @@ Esta fase fue la más experimental. Se preparó el archivo en formato SVG (compa
 
 **Carga de archivos:** Se insertó la USB en el puerto ubicado en el costado derecho de la máquina. Con la máquina encendida y en la pantalla `Home`, se seleccionó la opción `Retrieve Data` y luego `Buscar dentro de USB` para acceder a los archivos compatibles (PHX, PHC, FCM, PES, SVG).
 
-![Tapete](recursos/imgs/retrieve_data.png){ align="center" width="75%" }
-
-
+![Retrieve Data](recursos/imgs/retrieve_data.png){ align="center" width="75%" }
 
 **Posicionamiento del diseño:** Una vez seleccionado el archivo, la máquina mostró una cuadrícula representando el área de corte. Se utilizó la opción `Edit` para arrastrar con el dedo el dibujo completo y posicionarlo en una zona de la cuadrícula donde se confirmaba la presencia de material.
 
-!!! tip "Mantenimiento del Tapete"
+!!! tip "Prueba de Corte"
     Antes de ejecutar el trabajo completo, se recomienda realizar una prueba de corte en una pequeña esquina del material para verificar la presión y profundidad del corte sin arruinar toda la pieza.
 
 #### Configuración de Parámetros
 
-Para la configuración utilizada existen dos configuraciones con resultados positivos, se llego a estos através de experimentación y se accedió a través de la opción `cut` (corte) en el menú de configuración:
+Para la configuración utilizada existen dos configuraciones con resultados positivos, se llegó a estas a través de experimentación y se accedió mediante la opción `cut` (corte) en el menú de configuración:
 
+**Configuración 1:**
 - **Cut speed:** 3
 - **Cut pressure:** -9
 - **Cut pressure manual:** -9
@@ -93,16 +134,13 @@ Para la configuración utilizada existen dos configuraciones con resultados posi
 - **Half cut:** On
 - **Pressure Half cut:** -2
  
- Este segundo grupo de parametros dio muy buenos resultados.
-
+**Configuración 2:** Este segundo grupo de parámetros dio muy buenos resultados.
 - **Cut speed:** 1
 - **Cut pressure:** -9
 - **Cut pressure manual:** -1
 - **Cut amount:** auto
 - **Half cut:** On
 - **Pressure Half cut:** -1
-
-
 
 !!! warning "Limitaciones de Calibración"
     La máquina Brother Scan N Cut SDX225 solo permite valores de calibración en números enteros, con especificaciones vagas sobre las unidades y direcciones que cada parámetro representa. Esta falta de precisión hace difícil reproducir resultados consistentes entre intentos. Es necesario colocar el material sobre otro (por ejemplo, vinil) para evitar daños a la base de la máquina.
@@ -128,9 +166,7 @@ Los principales fallos del proceso estuvieron directamente relacionados con la n
 
 #### Aspectos Funcionales
 
-A pesar de los desafíos:
-
- El proceso demostró viabilidad para prototipos de baja complejidad bajo condiciones óptimas
+A pesar de los desafíos, el proceso demostró viabilidad para prototipos de baja complejidad bajo condiciones óptimas.
 
 ---
 
@@ -143,5 +179,3 @@ El uso de cortadora de vinil para fabricación de PCB flexibles representa una a
 3. **Resolución de limitaciones mecánicas:** Reparación o reemplazo de componentes dañados es fundamental para obtener resultados reproducibles.
 
 La técnica se encuentra en fase experimental pero muestra potencial para circuitos simples y flexibles, representando una herramienta valiosa cuando se comprenden sus limitaciones actuales.
-
----
