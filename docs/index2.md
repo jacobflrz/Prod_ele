@@ -107,7 +107,7 @@ Para la configuración utilizada existen dos configuraciones con resultados posi
 
 
 !!! warning "Limitaciones de Calibración"
-    La máquina Brother Scan N Cut SDX225 solo permite valores de calibración en números enteros, con especificaciones vagas sobre las unidades y direcciones que cada parámetro representa. Esta falta de precisión hace difícil reproducir resultados consistentes entre intentos. Es necesario colocar el material sobre otro sustrato (por ejemplo, vinil) para evitar daños a la base de la máquina.
+    La máquina Brother Scan N Cut SDX225 solo permite valores de calibración en números enteros, con especificaciones vagas sobre las unidades y direcciones que cada parámetro representa. Esta falta de precisión hace difícil reproducir resultados consistentes entre intentos. Es necesario colocar el material sobre otro (por ejemplo, vinil) para evitar daños a la base de la máquina.
 
 ---
 
