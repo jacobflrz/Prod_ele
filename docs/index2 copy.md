@@ -74,10 +74,6 @@ Durante la práctica se utilizó la simulación **interactiva**, pero Multisim p
 - **Análisis AC:** útil para circuitos con respuesta en frecuencia.  
 - **Barrido Paramétrico:** permite variar el valor de un componente, como la resistencia o el capacitor del 555, y analizar su efecto en la frecuencia del reloj.
 
-<div class="grid cards" markdown>
-- ![Simulación transitoria](recursos/imgs/multisim_sim1.jpg)
-- ![Simulación AC](recursos/imgs/multisim_sim2.jpg)
-</div>
 
 ---
 
@@ -90,6 +86,14 @@ El circuito respondió tal como se esperaba, demostrando la relación entre la f
 !!! success "Conclusión Técnica"
     La simulación permitió comprobar el principio de operación de un sistema de luces secuenciales controlado por un 555 y un 4017, facilitando su comprensión antes de su implementación física.
 
+
+<figure style="text-align:center;">
+  <video width="100%" style="max-width:800px;" controls muted loop>
+    <source src="/recursos/Videos/multisim_luces.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+  </video>
+  <figcaption style="font-size:0.9em; color:gray;">Simulación de luces en Multisim</figcaption>
+</figure>
 
 ---
 
@@ -106,6 +110,6 @@ Se comprobó que Multisim es una herramienta útil para **visualizar el comporta
 
 git add .
 
-git commit -m "Actualizar documentacion porfi4"
+git commit -m "Actualizar documentacion porfi5"
 
 git push
