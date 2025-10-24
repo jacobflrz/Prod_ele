@@ -108,8 +108,3 @@ Se comprobó que Multisim es una herramienta útil para **visualizar el comporta
 
 ---
 
-git add .
-
-git commit -m "Actualizar documentacion porfi5"
-
-git push
