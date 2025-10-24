@@ -32,24 +32,23 @@ El procedimiento inició en KiCad con el uso de la herramienta creador de políg
 En el menú de `Salidas de fabricación`, se activó la opción de trazado en negativo. El archivo se exportó en formato SVG para asegurar su compatibilidad.
 
 <figure style="text-align:center;">
-  <img src="recursos/imgs/kicad_negativo.png" alt="Exportación en Negativo" style="width:80%;">
+  <img src="imgs/kicad_negativo.png" alt="Exportación en Negativo" style="width:80%;">
   <figcaption style="font-size:0.9em; color:gray;">Previsualización de la exportación en negativo en KiCad.</figcaption>
 </figure>
 
 ---
+### Manual de uso Brother
+
+[Revisar Manual PDF](recursos/archivos/Manual.pdf){ .md-button }
+
 ### Botones Principales de la Brother Scan N Cut SDX225
 
-<figure style="text-align:center;">
-  <img src="docs/recursos/imgs/Botones_brother.png" alt="Botones" style="width:80%;">
-  <figcaption style="font-size:0.9em; color:gray;">Botones Brother.</figcaption>
-</figure>
+
+![Botones](recursos/imgs/Botones_brother.png){ align="center" width="96%" }
 
 **Posicionamiento correcto del tapete:** La máquina Brother Scan N Cut SDX225 requiere que el tapete adhesivo se coloque de manera específica, con la flecha del tapete señalando hacia adentro de la máquina.
 
-<figure style="text-align:center;">
-  <img src="docs/recursos/imgs/Tapete_Brother.png" alt="Botones" style="width:80%;">
-  <figcaption style="font-size:0.9em; color:gray;">Tapete Brother.</figcaption>
-</figure>
+![Tapete](recursos/imgs/Tapete_Brother.png){ align="center" width="75%" }
 
 ### Preparación del Tapete y Material
 
@@ -74,10 +73,9 @@ Esta fase fue la más experimental. Se preparó el archivo en formato SVG (compa
 
 **Carga de archivos:** Se insertó la USB en el puerto ubicado en el costado derecho de la máquina. Con la máquina encendida y en la pantalla `Home`, se seleccionó la opción `Retrieve Data` y luego `Buscar dentro de USB` para acceder a los archivos compatibles (PHX, PHC, FCM, PES, SVG).
 
-<figure style="text-align:center;">
-  <img src="docs/recursos/imgs/retrieve_data.png" alt="Botones" style="width:80%;">
-  <figcaption style="font-size:0.9em; color:gray;">Carga archivos.</figcaption>
-</figure>
+![Tapete](recursos/imgs/retrieve_data.png){ align="center" width="75%" }
+
+
 
 **Posicionamiento del diseño:** Una vez seleccionado el archivo, la máquina mostró una cuadrícula representando el área de corte. Se utilizó la opción `Edit` para arrastrar con el dedo el dibujo completo y posicionarlo en una zona de la cuadrícula donde se confirmaba la presencia de material.
 
