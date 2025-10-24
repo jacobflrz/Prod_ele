@@ -3,8 +3,11 @@
 ---
 
 **Nombre del proyecto:** Simulación de LEDs Secuenciales  
+
 **Equipo:** Sebastián Montaño y Juan Jacobo Flórez  
+
 **Asignatura:** Producción Electrónica  
+
 **Fecha:** 19/10/2025  
 
 ---
@@ -15,6 +18,9 @@ Esta práctica consistió en realizar un circuito secuencial básico en **NI Mul
 El objetivo fue **familiarizarnos con las herramientas de simulación del software** y comprender la lógica de funcionamiento de un sistema secuencial simple antes de pasar a la fase de diseño físico de la PCB.
 
 El circuito permitió observar de forma virtual cómo los LEDs se encendían uno a uno según la señal de reloj generada por el 555, confirmando el correcto funcionamiento del contador y de la simulación.
+<div class="grid cards" markdown>
+- ![Interfaz Multisim](recursos/imgs/4017_55.png)
+</div>
 
 ---
 
@@ -56,9 +62,6 @@ El temporizador 555 generó una señal periódica que alimentó el pin de reloj 
 
 El **multímetro virtual** se utilizó para comprobar los valores de **voltaje y corriente** en los nodos principales del circuito, verificando la correcta alimentación de los componentes.
 
-<div class="grid cards" markdown>
-- ![Multímetro Virtual](recursos/imgs/multisim_multimeter.jpg)
-</div>
 
 ---
 
@@ -87,12 +90,13 @@ El circuito respondió tal como se esperaba, demostrando la relación entre la f
 !!! success "Conclusión Técnica"
     La simulación permitió comprobar el principio de operación de un sistema de luces secuenciales controlado por un 555 y un 4017, facilitando su comprensión antes de su implementación física.
 
+
 ---
 
-### Conclusiones y Aprendizajes
+### Conclusiones 
 
 La práctica permitió comprender la **interacción entre componentes digitales y temporizadores** dentro de un entorno de simulación.  
-Se comprobó que Multisim es una herramienta útil para **visualizar el comportamiento dinámico de los circuitos** y realizar ajustes de forma rápida antes del prototipado real.
+Se comprobó que Multisim es una herramienta útil para **visualizar el comportamiento de los circuitos** y realizar ajustes de forma rápida antes del prototipado.
 
 * El 555 y el 4017 permiten implementar fácilmente secuencias de encendido.  
 * La simulación reduce errores y agiliza la validación de conceptos.  
@@ -102,6 +106,6 @@ Se comprobó que Multisim es una herramienta útil para **visualizar el comporta
 
 git add .
 
-git commit -m "Actualizar documentacion porfi3"
+git commit -m "Actualizar documentacion porfi4"
 
 git push
