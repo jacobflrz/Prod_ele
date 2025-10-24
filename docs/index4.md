@@ -95,8 +95,8 @@ El objetivo principal fue asegurar la **perpendicularidad** de los pines respect
 Se insertaron las tiras de pines, soldando un único pin en cada extremo para fijar la orientación, y luego el resto aplicando calor tanto al pad como al pin.
 
 !!! note "La Unión Perfecta en Forma de Cono"
-Una soldadura THT correcta presenta una forma cóncava, similar a un pequeño volcán.
-Indica que el estaño se ha adherido correctamente al pin y al pad por capilaridad, garantizando una conexión mecánica y eléctrica confiable.
+    Una soldadura THT correcta presenta una forma cóncava, similar a un pequeño volcán.
+    Indica una conexión mecánica y eléctrica confiable.
 
 ---
 
@@ -129,8 +129,8 @@ El ensamblaje manual rara vez es perfecto en el primer intento. En esta práctic
 Tras completar las soldaduras, se limpió la placa con alcohol isopropílico.
 
 !!! tip "La Importancia de la Limpieza"
-El flux residual es ácido y puede ser corrosivo o crear caminos conductivos con el tiempo.
-Limpiar es esencial tanto por estética como por confiabilidad eléctrica.
+    El flux residual es ácido y puede ser corrosivo o crear caminos conductivos con el tiempo.
+    Limpiar es esencial tanto por estética como por confiabilidad eléctrica.
 
 #### Pruebas de Continuidad y Validación
 
@@ -154,12 +154,5 @@ El circuito final resultó **operacional** y funcional tras las correcciones apl
 
 ---
 
-### Conclusiones y Aprendizajes
 
-Esta práctica permitió consolidar las **técnicas fundamentales de ensamblaje de PCBs**. Se concluye que:
-
-* La **técnica de anclaje** es la más eficiente para componentes pasivos SMD.
-* El uso de **pasta de soldar con cautín** es viable en prototipado, pero requiere precisión.
-* La **inspección y limpieza** son pasos críticos, no opcionales.
-* La **capacidad de corrección y reparación** (desoldar, limpiar pads, crear jumpers) es tan valiosa como la habilidad de soldar, pues permite recuperar placas dañadas y garantizar su operatividad.
 

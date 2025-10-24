@@ -16,31 +16,18 @@
 ### Resumen
 
 Esta práctica consistió en realizar un proyecto básico en **NI Multisim**, un software especializado para diseñar, simular y analizar circuitos analógicos, digitales y de potencia.
-El objetivo fue **familiarizarnos con la interfaz y las herramientas principales del programa**, para así poder desarrollar proyectos más complejos en el futuro.
+El objetivo fue **familiarizarnos con la interfaz y las herramientas principales del programa** para poder desarrollar proyectos más complejos en el futuro.
 
-El circuito diseñado permitió **encender LEDs de manera secuencial**, validando su comportamiento lógico y eléctrico **antes de proceder a la fabricación física de la PCB**.
-
-!!! tip "Objetivo Técnico"
-Comprender el flujo completo de trabajo en Multisim:
-- Diseño esquemático.
-- Conexión de componentes.
-- Simulación y análisis del comportamiento.
-- Corrección de errores lógicos.
+El circuito diseñado permitió **encender LEDs de manera secuencial**, validando su comportamiento lógico y eléctrico antes de proceder a la fabricación física de la PCB.
 
 ---
 
 ### Entorno de Simulación y Herramientas
 
 !!! note "Entorno de Simulación: NI Multisim"
-Multisim combina el diseño esquemático con un potente motor **SPICE**.
-Su ventaja principal es incluir instrumentos virtuales que **emulan herramientas reales de laboratorio**, como multímetros, generadores de señal y osciloscopios.
+    Multisim combina el diseño esquemático con instrumentos virtuales que imitan el funcionamiento de herramientas de laboratorio como multímetros, generadores de señal y osciloscopios.
 
-**Interfaz principal:**
-
-* **Área de trabajo (Schematic):** el lienzo cuadriculado donde se construye el circuito.
-* **Menú de Componentes:** `Place > Component...` abre la base de datos (*Master Database*) con todos los dispositivos eléctricos y electrónicos.
-* **Barra de instrumentos virtuales:** ubicada al lado derecho, incluye herramientas como **Multímetro**, **Osciloscopio** y **Generador de Funciones**.
-* **Controles de simulación:** botón verde ▶️ (*Run*) para iniciar la simulación, azul ⏸ (*Pause*) para pausarla y rojo ⏹ (*Stop*) para detenerla.
+El entorno está compuesto por el **área de trabajo (Schematic)**, donde se diseña el circuito; el **menú de componentes** (`Place > Component...`) que da acceso a la *Master Database*; la **barra de instrumentos virtuales**, situada a la derecha, con herramientas de medición y análisis; y los **controles de simulación** ubicados en la parte superior (▶️ *Run*, ⏸ *Pause*, ⏹ *Stop*).
 
 <div class="grid cards" markdown>
 - ![Interfaz Multisim](recursos/imgs/multisim_entorno.jpg)
@@ -48,154 +35,88 @@ Su ventaja principal es incluir instrumentos virtuales que **emulan herramientas
 
 ---
 
-### Proceso de Diseño: Colocación y Cableado
+### Proceso de Diseño y Simulación
 
-!!! tip "Búsqueda por Palabras Clave"
-La forma más rápida de encontrar componentes es usando la **barra de búsqueda (Filter)** dentro de la *Master Database*.
-Ejemplos útiles:
-- `"RES"` → resistencias
-- `"LED_RED"` → LED rojo
-- `"LM7805"` → regulador de voltaje
+El diseño inició con la **búsqueda y colocación de componentes** desde la *Master Database* usando la barra **Filter**, donde se pueden encontrar elementos mediante palabras clave como `"RES"` (resistencias), `"LED_RED"` (LED rojo) o `"LM7805"` (regulador de voltaje).
+Tras seleccionarlos, se colocaron en el área de trabajo con clic en **OK**, pudiendo rotarlos con **Ctrl+R** o clic derecho, y editar sus propiedades (nombre, valor, símbolo) con doble clic.
 
-**1. Colocación y rotación de componentes**
+Posteriormente se realizó el **cableado** entre los componentes haciendo clic y arrastrando desde los terminales. Es importante mantener un trazado limpio y usar ángulos rectos para facilitar la lectura del circuito.
 
-* Selecciona el componente deseado → clic en **OK** → clic en el área de trabajo para colocarlo.
-* Para rotarlo, haz **clic derecho → Rotate 90° clockwise**, o usa el atajo **Ctrl+R**.
-
-**2. Edición de atributos**
-
-* Doble clic sobre el componente para abrir su panel de propiedades.
-* Se pueden modificar su **nombre (RefDes)**, **valor**, o **símbolo visual**.
-
-<div class="grid cards" markdown>
-- ![Colocación de componentes](recursos/imgs/multisim_place.jpg)
-- ![Edición de atributos](recursos/imgs/multisim_edit.jpg)
-</div>
-
-**3. Cableado**
-
-* Haz clic en un terminal para iniciar el cableado (aparecerá un carrete).
-* Arrastra hasta el terminal de destino.
-* Los cables pueden moverse libremente y ajustarse en ángulos rectos.
-
-!!! warning "La Importancia del 'GND'"
-Toda simulación **SPICE** necesita un punto de referencia de **0V (tierra)**.
+!!! warning "Importancia del 'GND'"
+    Toda simulación requiere un punto de referencia de **0V (tierra)**.
 En Multisim se inserta desde:
 `Place > Component... > Group: Sources > Family: POWER_SOURCES > GROUND`.
-Si se omite, la simulación **no iniciará** o mostrará el error “*Simulation failed to converge*”.
+Si se omite, la simulación fallará con el error “*Simulation failed to converge*”.
 
----
+Con los componentes conectados, se procedió a **iniciar la simulación** usando el botón **Run (▶️)**. Durante este modo no se puede modificar el circuito, aunque puede pausarse (**⏸**) o detenerse (**⏹**) para realizar ajustes.
 
-### Proceso de Simulación: Instrumentación Virtual
+El análisis se complementó con el uso del **multímetro virtual**, que permite medir:
 
-El objetivo de la simulación fue **verificar el encendido secuencial de los LEDs** y medir los valores eléctricos de corriente y voltaje.
+* **Voltaje**, conectando el instrumento en **paralelo** al componente.
+* **Corriente**, conectándolo en **serie** con la carga.
 
-!!! note "Control de Simulación"
-- **Run (▶️):** inicia la simulación.
-- **Pause (⏸):** detiene temporalmente.
-- **Stop (⏹):** finaliza y permite editar el circuito.
-
-**Uso del Multímetro Virtual:**
-
-* **Voltaje (Voltímetro):** conectar en **paralelo** al componente.
-* **Corriente (Amperímetro):** conectar en **serie** con la carga.
-* Durante la simulación, doble clic sobre el multímetro abre su **panel frontal**, donde se elige entre `V`, `A`, `DC` o `AC`.
+Doble clic sobre el ícono del multímetro abre su panel frontal, donde se selecciona si la medición es en **voltaje (V)** o **corriente (A)**, y el tipo de señal (**DC** o **AC**).
 
 <div class="grid cards" markdown>
 - ![Multímetro Virtual](recursos/imgs/multisim_multimeter.jpg)
 </div>
 
-!!! tip "Instrumentación Virtual"
-Los instrumentos de Multisim imitan equipos reales.
-Es posible observar las formas de onda, medir frecuencia o verificar caída de tensión sin necesidad de equipo físico.
-
 ---
 
-### Técnicas de Depuración y Corrección
+### Depuración y Corrección de Errores
 
-En la simulación, los errores son **lógicos**, no físicos.
-Durante la práctica se aplicaron tres técnicas principales de corrección.
+Durante la práctica surgieron errores comunes en simulación, principalmente **lógicos o de conexión**, que se corrigieron aplicando distintas técnicas:
 
-#### 1. Errores de Convergencia
+**1. Errores de Convergencia:**
+Se produjeron por ausencia de GND o terminales flotantes. Se solucionó verificando las conexiones y añadiendo el punto de tierra necesario.
 
-**Síntoma:** “Simulation failed to converge”.
-**Causa:** Falta de tierra (GND) o terminales flotantes.
-**Corrección:** Revisar todas las conexiones y agregar el componente **GROUND** si no está presente.
+**2. Valores Incorrectos:**
+En algunos casos los LEDs no encendían debido a resistencias demasiado altas. Se corrigieron ajustando sus valores, por ejemplo, reemplazando `1kΩ` por `330Ω`.
 
-#### 2. Valores Incorrectos de Componentes
+**3. Cableado Erróneo:**
+Se detectaron conexiones incorrectas que impedían la lectura de corriente o voltaje. La corrección consistió en eliminar los cables con **Supr** y rehacer el trazado.
 
-**Síntoma:** El LED no enciende o el circuito no responde.
-**Corrección:**
-
-* Detener la simulación.
-* Doble clic sobre el componente → ajustar el valor (por ejemplo, cambiar `1k` por `330 Ω`).
-* Reiniciar la simulación.
-
-#### 3. Recableado Incorrecto
-
-**Síntoma:** Conexiones erróneas o mediciones imposibles.
-**Corrección:**
-
-* Detener simulación.
-* Eliminar el cable incorrecto (**Supr**).
-* Rehacer la conexión correctamente.
-
-!!! tip "Depuración Eficiente"
-Usa colores o etiquetas para identificar las señales principales (alimentación, tierra, señal de reloj).
-Esto facilita el seguimiento visual del circuito y evita errores de conexión.
+Estas correcciones permitieron depurar el diseño hasta obtener un comportamiento estable y coherente con la lógica esperada.
 
 ---
 
 ### Tipos de Simulación en Multisim
 
-!!! info "Simulaciones Básicas Disponibles"
-Multisim permite distintos tipos de simulación según el tipo de circuito o análisis requerido.
-En esta práctica se trabajó con simulación **interactiva (tiempo real)**, pero el programa ofrece otras modalidades fundamentales:
+Además de la simulación **interactiva**, usada en esta práctica para probar el circuito en tiempo real, Multisim ofrece distintos modos de análisis que permiten estudiar el comportamiento eléctrico con mayor detalle:
 
-1. **Simulación Transitoria (Time Domain)**
-
-   * Permite observar cómo cambian las señales con el tiempo.
-   * Ideal para estudiar **encendidos, secuencias de LEDs o respuestas de temporizadores**.
-
-2. **Análisis de DC (Punto Operativo)**
-
-   * Muestra los valores estables de voltaje y corriente cuando el circuito no varía en el tiempo.
-   * Útil para verificar **polarización de transistores** o **caídas de tensión en resistencias**.
-
-3. **Análisis AC (Frecuencia)**
-
-   * Permite estudiar la respuesta de un circuito frente a señales sinusoidales.
-   * Se usa para analizar **filtros, amplificadores o etapas de ganancia**.
-
-4. **Análisis de Barrido Paramétrico (Parametric Sweep)**
-
-   * Simula el comportamiento del circuito mientras **se varía un parámetro** (por ejemplo, una resistencia o frecuencia).
-   * Ideal para estudiar **la sensibilidad del circuito** o comparar configuraciones.
+* **Simulación Transitoria (Time Domain):** analiza cómo varían las señales con el tiempo. Es ideal para estudiar secuencias de encendido, retardos o temporizaciones.
+* **Análisis DC (Punto Operativo):** muestra voltajes y corrientes estables, útil para verificar caídas de tensión o polarización de transistores.
+* **Análisis AC (Frecuencia):** permite observar la respuesta del circuito ante señales sinusoidales, empleado en filtros o amplificadores.
+* **Barrido Paramétrico (Parametric Sweep):** estudia cómo varía la salida al modificar un valor de entrada, como la resistencia o frecuencia.
 
 <div class="grid cards" markdown>
-- ![Ejemplo de simulación transitoria](recursos/imgs/multisim_sim1.jpg)
-- ![Ejemplo de simulación AC](recursos/imgs/multisim_sim2.jpg)
+- ![Simulación transitoria](recursos/imgs/multisim_sim1.jpg)
+- ![Simulación AC](recursos/imgs/multisim_sim2.jpg)
 </div>
 
 ---
 
-### Inspección y Validación Final
+### Validación y Resultados
 
-Tras las pruebas de simulación y depuración, se confirmó el **funcionamiento lógico secuencial** del circuito, listo para ser exportado al entorno de diseño de PCB.
+Una vez corregidos los errores, la simulación final mostró el funcionamiento esperado: los **LEDs se encendían y apagaban de forma secuencial**, confirmando la correcta conexión y lógica del circuito.
+Con esto, el proyecto quedó validado y listo para ser trasladado a la etapa de diseño de PCB.
 
 !!! success "Conclusión Técnica"
-Multisim permitió **verificar y ajustar el comportamiento del circuito** antes de la implementación física, reduciendo riesgos y mejorando la comprensión del proceso de simulación electrónica.
+    Multisim permitió **verificar y ajustar el comportamiento del circuito** antes de su implementación física, reduciendo riesgos y mejorando la comprensión de los principios de simulación electrónica.
 
 ---
 
 ### Conclusiones y Aprendizajes
 
-Esta práctica consolidó la comprensión del flujo de trabajo en **Multisim**, desde la colocación de componentes hasta la validación final de la simulación.
+Esta práctica fortaleció la comprensión del flujo de trabajo dentro de **Multisim**, integrando diseño, simulación, análisis y depuración de errores.
 
-* La **simulación previa a la fabricación** permite detectar errores lógicos o de cálculo sin desperdiciar materiales.
-* El correcto uso de las **librerías de componentes** y la instrumentación virtual es clave para un diseño ágil.
-* Los errores de simulación suelen ser humanos (pines flotantes, falta de GND). La atención al detalle es esencial.
-* Multisim facilita la **transición del entorno virtual al físico**, haciendo más segura la producción electrónica.
+* La simulación previa a la fabricación permite detectar errores sin desperdiciar materiales.
+* El uso correcto de librerías e instrumentos virtuales agiliza el diseño y la comprobación.
+* Multisim es una herramienta efectiva para **transicionar del entorno virtual al físico**, garantizando que los prototipos electrónicos funcionen desde la primera versión.
 
 ---
+git add .
 
+git commit -m "Actualizar documentacion porfin"
+
+git push
