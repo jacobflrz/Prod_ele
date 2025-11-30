@@ -210,8 +210,3 @@ Una vez completado el grabado láser, la placa requiere procesos adicionales que
 
 El láser de fibra IR de la xTool F1 demostró ser una excelente opción para el grabado de pistas en PCB, ofreciendo velocidad y precisión superiores. La combinación con la monoFab SRM-20 para perforaciones y contorno permitió completar el proceso de fabricación satisfactoriamente, logrando placas funcionales listas para el ensamblaje de componentes.
 
-git add .
-
-git commit -m "Xtool"
-
-git push 
