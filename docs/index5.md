@@ -8,13 +8,13 @@
 
 **Asignatura:** Producción Electrónica
 
-**Fecha:** [FECHA]
+**Fecha:** 28/11/2025
 
 ---
 
 ### Resumen
 
-Esta práctica representa una introducción al software profesional Altium Designer, una de las herramientas más utilizadas en la industria para el diseño de circuitos impresos. El objetivo fue familiarizarse con el entorno de trabajo, la estructura de proyectos, el diseño de esquemáticos, la gestión de librerías de componentes, y el proceso completo hasta la generación de PCB. Altium ofrece un ecosistema integrado con herramientas de simulación, verificación de diseño y características avanzadas de enrutado automático. Se aplicaron criterios de diseño similares a prácticas anteriores (separación de pistas de 0.4 mm y buenas prácticas de enrutado).
+Esta práctica es una introducción al software Altium Designer, una herramientas utilizada en la industria para el diseño de circuitos impresos. El objetivo fue familiarizarse con el entorno de trabajo, la estructura de proyectos, el diseño de esquemáticos, la gestión de librerías de componentes, y el proceso completo hasta la generación de PCB. Altium ofrece un ecosistema integrado con herramientas de simulación, verificación de diseño y características avanzadas de enrutado automático. 
 
 ---
 
@@ -22,7 +22,7 @@ Esta práctica representa una introducción al software profesional Altium Desig
 
 #### Estructura de Proyecto en Altium
 
-Altium Designer organiza el trabajo mediante un sistema de proyectos (`.PrjPcb`) que integra todos los archivos relacionados: esquemáticos, PCB, librerías y documentos de salida.
+Altium organiza el trabajo mediante un sistema de proyectos (`.PrjPcb`) que integra todos los archivos relacionados: esquemáticos, PCB, librerías y documentos de salida.
 
 **Creación del proyecto:**
 
