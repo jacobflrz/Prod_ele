@@ -89,7 +89,9 @@ El editor de esquemáticos de Altium ofrece herramientas avanzadas de verificaci
 !!! tip "Net Labels vs. Cables"
     Similar a KiCad, usar Net Labels limpia visualmente el esquemático. Altium conecta automáticamente todos los puntos con el mismo nombre de red, incluso entre múltiples hojas.
 
-**IMAGEN SUGERIDA:** `altium_esquematico_completo.png` - Esquemático finalizado con etiquetas
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/4 Finalizado.png)
+</div>
 
 ### Diseño de PCB
 
@@ -100,7 +102,9 @@ El editor de esquemáticos de Altium ofrece herramientas avanzadas de verificaci
 3. **Validación:** Panel ECO (Engineering Change Order) muestra cambios a aplicar
 4. **Ejecutar cambios:** `Validate Changes` → `Execute Changes`
 
-**IMAGEN SUGERIDA:** `altium_update_pcb.png` - Diálogo de Engineering Change Order
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/6 ECO.png)
+</div>
 
 #### Configuración de la Placa
 
@@ -118,7 +122,9 @@ El editor de esquemáticos de Altium ofrece herramientas avanzadas de verificaci
 - **Via Style:** Tamaño de vías
 - **Manufacturing:** Restricciones de fabricación
 
-**IMAGEN SUGERIDA:** `altium_design_rules.png` - Editor de reglas de diseño
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/7 Reglas.png)
+</div>
 
 !!! note "Design Rule Check (DRC)"
     Altium verifica reglas en tiempo real. Violaciones aparecen como líneas verdes en el diseño. Ejecutar `Tools` → `Design Rule Check` genera un reporte completo.
@@ -133,7 +139,9 @@ Los componentes aparecen inicialmente en el área de trabajo fuera de la placa.
 - **Alineación:** Seleccionar múltiples + Click derecho → `Align`
 - **Distribución:** `Arrange` → `Distribute` para espaciado uniforme
 
-**IMAGEN SUGERIDA:** `altium_componentes_colocados.png` - Vista de componentes organizados en PCB
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/8 Organizados.png)
+</div>
 
 #### Enrutado de Pistas
 
@@ -145,7 +153,9 @@ Altium ofrece múltiples modos de enrutado:
 - **Modo de esquina:** `Shift+Space` cambia entre 45°, 90° y arco
 - **Terminar:** Click derecho → `End Route` o `Esc`
 
-**IMAGEN SUGERIDA:** `altium_routing_manual.png` - Proceso de enrutado manual
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/9 Manual.png)
+</div>
 
 #### Auto-Routing
 
@@ -170,9 +180,13 @@ Una de las características distintivas de Altium es su motor de enrutado autom�
 !!! warning "Auto-Routing: Consideraciones"
     El auto-routing es útil para evaluar rápidamente la viabilidad del layout y para diseños con muchas conexiones. Sin embargo, es importante revisar y optimizar las rutas generadas automáticamente para asegurar la calidad del diseño final.
 
-**IMAGEN SUGERIDA:** `altium_autorouter_config.png` - Diálogo de configuración del auto-router
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/10 Auto-Router.png)
+</div>
 
-**IMAGEN SUGERIDA:** `altium_pcb_final.png` - PCB completamente enrutado
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/11 Enrutado.png)
+</div>
 
 ---
 
@@ -193,7 +207,10 @@ El DRC es crucial antes de enviar a fabricación:
 - Unrouted nets (conexiones sin completar)
 - Width constraint violations (pistas muy delgadas)
 
-**IMAGEN SUGERIDA:** `altium_drc_report.png` - Reporte de DRC con violaciones
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/12 DRC.png)
+</div>
+
 
 #### Visualización 3D
 
@@ -209,8 +226,9 @@ Esta vista ayuda a:
 - Detectar componentes que puedan interferir
 - Presentación profesional del diseño
 
-**IMAGEN SUGERIDA:** `altium_vista_3d.png` - Vista 3D del PCB con componentes
-
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/13 3D.png)
+</div>
 ---
 
 ### Generación de Archivos de Fabricación
@@ -239,7 +257,9 @@ Altium permite generar múltiples formatos de salida para fabricación y documen
 
 `File` → `Fabrication Outputs` → `NC Drill Files` para archivos de perforación en formato Excellon.
 
-**IMAGEN SUGERIDA:** `altium_gerber_setup.png` - Configuración de salida Gerber
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/14 Gerber.png)
+</div>
 
 ---
 

@@ -35,7 +35,9 @@ La xTool F1 es una máquina láser híbrida que combina láser de diodo (10W) co
 !!! warning "Enfriador Obligatorio"
     Antes de iniciar cualquier trabajo con la fibra IR, es obligatorio encender el sistema de enfriamiento de la máquina. Operar sin enfriamiento puede dañar permanentemente el láser.
 
-**IMAGEN SUGERIDA:** `xtool_maquina.jpg` - Vista general de la xTool F1 con sistema de enfriamiento
+<div class="grid cards" markdown>
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/15_enfriador.png)
+</div>
 
 ---
 
@@ -64,7 +66,7 @@ Similar al proceso con la cortadora de vinil, fue necesario crear una máscara q
 
 4. **Rellenar polígono:** Click derecho en el polígono → **Polygon Actions** → **Repour All**
 
-**IMAGEN SUGERIDA:** `xtool_maquina.jpg` - Creaciion de la mascara
+![Botones](recursos/imgs/Seminver1.png){ align="center" width="96%" }  
 
 El resultado es una capa de cobre completamente rellena que cubre toda la placa.
 
