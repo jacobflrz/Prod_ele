@@ -33,7 +33,10 @@ Altium organiza el trabajo mediante un sistema de proyectos (`.PrjPcb`) que inte
 !!! tip "Organización de Archivos"
     Altium mantiene todos los archivos del proyecto en una carpeta centralizada. Es recomendable crear subcarpetas para librerías personalizadas, documentación y archivos de fabricación desde el inicio.
 
-**IMAGEN SUGERIDA:** `altium_nuevo_proyecto.png` - Captura del diálogo de nuevo proyecto
+<div class="grid cards" markdown>
+- ![Cautín y materiales](recursos/imgs/mate_sol.jpg)
+</div>
+
 
 ---
 
