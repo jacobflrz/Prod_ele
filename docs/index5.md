@@ -34,7 +34,7 @@ Altium organiza el trabajo mediante un sistema de proyectos (`.PrjPcb`) que inte
     Altium mantiene todos los archivos del proyecto en una carpeta centralizada. Es recomendable crear subcarpetas para librerías personalizadas, documentación y archivos de fabricación desde el inicio.
 
 <div class="grid cards" markdown>
-- ![Cautín y materiales](recursos/imgs/mate_sol.jpg)
+- ![Captura del diálogo de nuevo proyecto](recursos/imgs/1 NuevoProyecto.png)
 </div>
 
 
@@ -53,7 +53,9 @@ Altium incluye acceso a librerías en línea mediante **Manufacturer Part Search
 3. **Selección:** Revisar footprint, símbolo y modelo 3D
 4. **Agregar al proyecto:** Descargar e integrar al diseño
 
-**IMAGEN SUGERIDA:** `altium_components_panel.png` - Panel de componentes con búsqueda activa
+<div class="grid cards" markdown>
+- ![Panel de componentes con búsqueda activa](recursos/imgs/2 Busqueda.png)
+</div>
 
 ---
 
@@ -73,7 +75,9 @@ El editor de esquemáticos de Altium ofrece herramientas avanzadas de verificaci
 - **Rotación:** `Spacebar` durante colocación
 - **Copiar múltiples:** Seleccionar + `Ctrl+D` (duplicar con espaciado)
 
-**IMAGEN SUGERIDA:** `altium_esquematico_componentes.png` - Esquemático con componentes colocados
+<div class="grid cards" markdown>
+- ![Esquemático con componentes colocados](recursos/imgs/1 NuevoProyecto.png)
+</div>
 
 #### Conexiones y Cableado
 
