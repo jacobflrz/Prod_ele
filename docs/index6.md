@@ -8,7 +8,7 @@
 
 **Asignatura:** Producción Electrónica
 
-**Fecha:** [FECHA]
+**Fecha:** 1/12/2025
 
 ---
 

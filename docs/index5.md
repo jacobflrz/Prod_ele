@@ -91,18 +91,6 @@ El editor de esquemáticos de Altium ofrece herramientas avanzadas de verificaci
 
 **IMAGEN SUGERIDA:** `altium_esquematico_completo.png` - Esquemático finalizado con etiquetas
 
-#### Validación del Esquemático
-
-Antes de pasar al PCB, Altium requiere compilación del proyecto:
-
-1. **Compilar:** `Project` → `Compile PCB Project`
-2. **Revisar errores:** Panel Messages muestra warnings y errors
-3. **Electrical Rule Check (ERC):** Detecta problemas como pines sin conectar, cortocircuitos potenciales
-
-**IMAGEN SUGERIDA:** `altium_compile_messages.png` - Panel de mensajes después de compilar
-
----
-
 ### Diseño de PCB
 
 #### Transferencia desde Esquemático
