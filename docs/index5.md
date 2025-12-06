@@ -263,15 +263,7 @@ Altium permite generar múltiples formatos de salida para fabricación y documen
 
 ---
 
-### Conclusiones
 
-Altium Designer representa una herramienta profesional completa para diseño de PCB. La práctica permitió familiarizarse con:
 
-1. **Flujo de trabajo integrado:** Desde esquemático hasta archivos de fabricación en un mismo entorno
-2. **Gestión de componentes:** Acceso a librerías online de fabricantes con información técnica completa
-3. **Herramientas avanzadas:** Auto-routing con estrategias configurables, DRC en tiempo real, y visualización 3D
-4. **Preparación profesional:** Estándar industrial ampliamente utilizado en la industria electrónica
-
-El proceso completo de diseño en Altium demostró ser eficiente y bien integrado, desde la concepción del esquemático hasta la generación de archivos para fabricación. Las herramientas de validación automática y el auto-router facilitan significativamente el proceso de diseño, aunque siempre requieren revisión y optimización manual para garantizar la calidad del producto final.
 
 

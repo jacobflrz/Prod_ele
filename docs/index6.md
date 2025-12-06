@@ -1,4 +1,4 @@
-# Práctica #6 - Uso XTool F1 PCB
+# Práctica #6 - Uso XTool F1 Ultra
 
 ---
 
@@ -82,7 +82,7 @@ El resultado es una capa de cobre completamente rellena que cubre toda la placa.
    - Unidades: Milímetros
 3. **Generar archivo:** Guardar DXF para importar en XCS
 
-**IMAGEN SUGERIDA:** `xtool_export_altium.png` - Configuración de exportación DXF en Altium
+![Botones](recursos/imgs/dxf.png){ align="center" width="96%" } 
 
 ---
 
@@ -93,7 +93,7 @@ El resultado es una capa de cobre completamente rellena que cubre toda la placa.
 Se trabajó con dos tipos de placas de circuito impreso:
 
 - **FR4 (Fibra de Vidrio):** Placa fenólica estándar, mayor resistencia mecánica
-- **Baquelita:** Material fenólico económico, más frágil pero funcional
+- **Baquelita:** Material fenólico económico.
 
 **Preparación de la superficie:**
 
@@ -101,7 +101,7 @@ Se trabajó con dos tipos de placas de circuito impreso:
 2. **Fijación:** Colocar la placa en la base de la xTool F1, asegurando que esté completamente plana
 3. **Encender enfriador:** Activar el sistema de enfriamiento antes de cualquier operación
 
-**IMAGEN SUGERIDA:** `xtool_placa_preparada.jpg` - Placa colocada en la máquina con sistema de enfriamiento activo
+![Botones](recursos/imgs/placaxtool.png){ align="center" width="96%" } 
 
 ---
 
