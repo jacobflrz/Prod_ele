@@ -120,7 +120,7 @@ La xTool F1 incluye una cámara que permite posicionamiento visual preciso:
 - **Alineación:** Superponer el diseño digital sobre la imagen de la cámara
 - **Ajuste fino:** Mover y rotar el diseño para alinearlo perfectamente con la placa física
 
-**IMAGEN SUGERIDA:** `xtool_camara_alineacion.png` - Vista de la cámara con diseño superpuesto
+![Botones](recursos/imgs/vistaxtool.png){ align="center" width="96%" } 
 
 #### Medición Automática de Altura
 
@@ -134,7 +134,7 @@ Antes del grabado, la máquina debe determinar la altura exacta de la superficie
 !!! tip "Superficie Plana Crítica"
     La placa debe estar perfectamente plana. Cualquier curvatura o irregularidad afectará el grabado. La medición automática compensa variaciones menores.
 
-**IMAGEN SUGERIDA:** `xtool_medicion_altura.png` - Proceso de medición automática de altura
+![Botones](recursos/imgs/autoxtool.png){ align="center" width="96%" } 
 
 ---
 
@@ -142,14 +142,15 @@ Antes del grabado, la máquina debe determinar la altura exacta de la superficie
 
 #### Parámetros del Láser de Fibra IR
 
-Los parámetros se ajustan específicamente para la fibra IR trabajando sobre cobre:
+Los parámetros se ajustan específicamente para la fibra IR trabajando en placas con Engrave:
 
 - **Modo:** Fibra IR (Infrared Fiber)
-- **Material:** Metal - Cobre
-- **Potencia:** [VALOR]% 
-- **Velocidad:** [VALOR] mm/s
-- **Frecuencia:** [VALOR] kHz
-- **Pasadas:** [NÚMERO] 
+- **Alimentacion:** 100% 
+- **Velocidad:** 750 mm/s
+- **Paso:** 3
+- **Lineas por cm:** 300
+- **Modo Grabado:** Unidireccional
+- **Frecuencia:** 30 kHz
 
 **IMAGEN SUGERIDA:** `xtool_parametros_ir.png` - Panel de configuración de fibra IR en XCS
 
@@ -157,15 +158,6 @@ Los parámetros se ajustan específicamente para la fibra IR trabajando sobre co
 
 1. **Vista previa:** Verificar el recorrido del láser en XCS
 2. **Iniciar trabajo:** Presionar Start
-3. **Monitoreo:** Observar el proceso a través de la cámara integrada
-
-**Durante el grabado:**
-
-- El láser de fibra IR remueve el cobre en las áreas de aislamiento
-- El proceso es rápido y preciso
-- El sistema de enfriamiento mantiene la temperatura estable
-
-**IMAGEN SUGERIDA:** `xtool_proceso_grabado.jpg` - Láser de fibra IR en operación
 
 !!! warning "Seguridad con Láser IR"
     - El láser de fibra es invisible y extremadamente peligroso
@@ -195,8 +187,6 @@ Una vez completado el grabado láser, la placa requiere procesos adicionales que
 2. **monoFab SRM-20:** Perforación y corte de contorno
 3. **Resultado:** PCB completa lista para ensamblaje
 
-**IMAGEN SUGERIDA:** `xtool_resultado_final.jpg` - PCB completamente terminada después de ambos procesos
-
 ---
 
 ### Resultados y Conclusiones
@@ -207,8 +197,3 @@ Una vez completado el grabado láser, la placa requiere procesos adicionales que
 - **Velocidad:** Grabado significativamente más rápido que fresado
 - **Sin desgaste de herramientas:** No requiere cambio de fresas
 - **Repetibilidad:** Una vez configurado, resultados consistentes
-
-**Conclusión general:**
-
-El láser de fibra IR de la xTool F1 demostró ser una excelente opción para el grabado de pistas en PCB, ofreciendo velocidad y precisión superiores. La combinación con la monoFab SRM-20 para perforaciones y contorno permitió completar el proceso de fabricación satisfactoriamente, logrando placas funcionales listas para el ensamblaje de componentes.
-
