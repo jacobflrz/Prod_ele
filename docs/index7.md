@@ -57,6 +57,8 @@ Cada LED tiene su propio circuito de atenuación, repetido 8 veces:
 - **Capacitor de fading (470µF):** Almacena energía y se descarga gradualmente
 - **Resistor limitador:** Protección del LED
 
+![Botones](recursos/imgs/arquiplac.png){ align="center" width="96%" } 
+
 !!! note "Principio del Fading"
     Cuando el contador activa una salida, el capacitor se carga rápidamente a través del diodo. Al desactivarse, el capacitor se descarga lentamente a través del LED, creando el efecto de atenuación gradual que da sensación de  fluidez.
 
@@ -80,12 +82,15 @@ El proyecto aplicó las técnicas aprendidas en prácticas anteriores, especialm
 | Resistores | Varios valores | 1206 | 10 |
 | Capacitores | Varios valores | THT | 3 |
 
+![Botones](recursos/imgs/pcbalt.png){ align="center" width="96%" } 
+
 
 **Criterios aplicados:**
 
 - **Forma:** Diseño circular adaptado a la forma de la rueda de carga
 - **Separación de pistas:** 0.4 mm (estándar de prácticas anteriores)
-- **Distribución de LEDs:** Espaciado uniforme en arco para efecto visual óptimo
+- **Distribución de LEDs:** Espaciado uniforme en arco para efecto visual óptima
+
 
 ---
 
@@ -99,7 +104,14 @@ Dado que la fabricación se realizaría finalmente con la monoFab SRM-20, y el f
 
 1. **Abrir KiCad PCB Editor:** Iniciar el editor de placas
 2. **Importar archivo:** `File` → `Import` → `Non-KiCad Board File`
+
+![Botones](recursos/imgs/nonkicad.png){ align="center" width="96%" } 
+
+
 3. **Seleccionar archivo:** Elegir el archivo `.PcbDoc` guardado de Altium
+
+![Botones](recursos/imgs/exporkicad.png){ align="center" width="96%" } 
+
 4. **Mapeo de capas:** KiCad solicitará relacionar las capas de Altium con capas de KiCad
    - **Obligatorio:** Relacionar capa superior (Top Layer) e inferior (Bottom Layer)
    - **Recomendado:** Relacionar también capas de contorno (Edge.Cuts) y etiquetas relevantes (Silkscreen)
@@ -166,6 +178,9 @@ El proceso de soldadura aplicó las técnicas de la Práctica #4.
    - Verificación de polaridad crítica
    - Soldadura cuidadosa por tamaño
 
+
+![Botones](recursos/imgs/soldi.jpeg){ align="center" width="70%" } 
+
 ---
 
 ### Pruebas y Resultados
@@ -185,4 +200,8 @@ El proceso de soldadura aplicó las técnicas de la Práctica #4.
 - Frecuencia de 3 Hz lograda
 - Consumo dentro de especificaciones
 
-El resultado fue un dispositivo funcional que demuestra la aplicación práctica de conceptos teóricos en un producto real. El proyecto destacó la importancia de la flexibilidad en manufactura (cambio de xTool a monoFab) y la integración de conocimientos multidisciplinarios para lograr un resultado exitoso.
+![Botones](recursos/imgs/funcia.jpeg){ align="center" width="65%" } 
+
+El resultado fue un dispositivo  que demuestra la aplicación práctica de conceptos teóricos en un producto. El proyecto mostro la importancia de la flexibilidad (cambio de xTool a monoFab) y la integración de conocimientos adquiridos para lograr un resultado exitoso.
+
+

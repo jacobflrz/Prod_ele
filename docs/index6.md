@@ -152,7 +152,7 @@ Los parámetros se ajustan específicamente para la fibra IR trabajando en placa
 - **Modo Grabado:** Unidireccional
 - **Frecuencia:** 30 kHz
 
-**IMAGEN SUGERIDA:** `xtool_parametros_ir.png` - Panel de configuración de fibra IR en XCS
+![Botones](recursos/imgs/paraxtool.png){ align="center" width="96%" } 
 
 #### Proceso de Grabado
 
